@@ -1,6 +1,3 @@
-//Sweet Alert 2
-
-
 const URL = "js/cotizacion.json";
 const cotizacionDolar = [];
 
@@ -8,7 +5,7 @@ const cotizacionDolar = [];
 agregarFamiliar = (nombre, edad, empleado, arrayFamiliares) => {
   if (!nombre || !edad) {
     Swal.fire({
-      icon: "error",
+      icon: "info",
       title: "Por favor, complete todos los campos para continuar"
     });
   } else {
@@ -35,7 +32,10 @@ guardarDatos = arrayFamiliares => {
 // Función para habilitar la sección de cotización
 habilitarCotizacion = (arrayFamiliares, formMiddleSection, URL) => {
   if (arrayFamiliares.length <= 0) {
-    alert('Debe ingresar al menos un familiar para calcular la garantía');
+    Swal.fire({
+      icon: "info",
+      title: "Debe ingresar al menos un familiar para calcular la garantía"
+    });
   } else {
     //Esconde el contenido anterior para mostrar el nuevo
     document.getElementById('form-main').style.display = 'none';
@@ -62,7 +62,7 @@ habilitarCotizacion = (arrayFamiliares, formMiddleSection, URL) => {
   calcularCotizacion(formMiddleSection);
 }
 
-// Función para calcular la cotización
+// Función para calcular la cotización de la garantía
 calcularCotizacion = async (formMiddleSection) => {
   document.getElementById('calcular-cotizacion').addEventListener('click', async () => {
     const inputsIngresos = document.querySelectorAll('#ingresos');
@@ -99,10 +99,11 @@ obtenerCotizacionDolar = async (url) => {
 // Convierte los ingresos totales a dólares
 calcularDolares = (totalIngresos) => {
   if (cotizacionDolar.length === 0) {
-    console.error('No se han cargado las cotizaciones del dólar.');
+    console.error('No se cargaron las cotizaciones del dólar.');
     return;
   }
 
+  //Muestra los ingresos en dólares bajo los ingresos en pesos
   const ingresosDolaresHTML = `
     <div id='ingresos-dolares'>
       <span id='ingresos-dolares' class='footer-alert'> Ingresos en dólares: </span>
@@ -119,8 +120,7 @@ calcularDolares = (totalIngresos) => {
   document.getElementById('form-footer').innerHTML += ingresosDolaresHTML;
 }
 
-
-/* Espera 3 segundos a que cargue el documento para detectar correctamente
+/* Espera 2 segundos a que cargue el documento para detectar correctamente
   todos los elementos del DOM */
 setTimeout(() => {
   localStorage.clear();
@@ -141,4 +141,4 @@ setTimeout(() => {
     guardarDatos(familiares);
     habilitarCotizacion(familiares, formMiddleSection);
   });
-}, 3000);
+}, 2000);
