@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(46, 46, 46);
+  background-color: rgb(208, 237, 255);
+
+  #form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &.checkbox {
+        flex-direction: row;
+      }
+    }
+
+    #form-main {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    #form-middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      .form-btn {
+        padding: 0.5rem;
+        border: 1px solid rgb(46, 46, 46);
+        border-radius: 8px;
+        background-color: rgb(171, 224, 235);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(226, 247, 245);
+        }
+      }
+
+      .form-description {
+        font-size: 14px;
+      }
+    }
+
+    #form-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      #ingresos-dolares {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .ingresos-dolares__title {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador de garantía</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/scripts.js"></script>
+  <!-- Sweet Alert 2-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js "></script>
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css " rel="stylesheet">
+</head>
+
+<body>
+
+  <h1 class="section-title">Cotizador de garantía</h1>
+
+  <form id="form-container">
+
+    <div id="form-main">
+      <h2 class="section-subtitle">Ingrese los datos del familiar</h2>
+      <div class="input-group">
+        <label for="nombre" class="input-label">Nombre completo</label>
+        <input type="text" id="nombre" class="form-input">
+
+        <label for="edad" class="input-label">Edad</label>
+        <input type="text" id="edad" class="form-input">
+      </div>
+      <div class="input-group checkbox">
+        <label for="empleado" class="input-label">¿Tiene empleo?</label>
+        <input type="checkbox" id="empleado" class="form-input form-checkbox">
+      </div>
+    </div>
+
+    <div id="form-middle">
+      <div class="form-btn" id="agregar-familiar">Agregar familiar</div>
+      <div class="form-btn" id="continuar">Continuar</div>
+    </div>
+
+    <div id="form-footer">
+    </div>
+  </form>
+
+</body>
+
+</html>

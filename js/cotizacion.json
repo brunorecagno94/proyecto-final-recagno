@@ -1,0 +1,12 @@
+[
+  {
+    "tipo": "Dólar oficial",
+    "compra": 781,
+    "venta": 821
+  },
+  {
+    "tipo": "Dólar blue",
+    "compra": 940,
+    "venta": 970
+  }
+]
